@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -22,33 +22,33 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{6F59884D-4367-49A9-B6FD-BF60376873CE}</ProjectGuid>
     <RootNamespace>visualstudio2017sdl</RootNamespace>
-    <ProjectName>visual_studio_2017_sdl_x64</ProjectName>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>cta gui</ProjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -85,7 +85,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\SDL2\include;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\SDL2\include;$(ProjectDir);$(ProjectDir)\cg_base;$(ProjectDir)\cg_drivers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsC</CompileAs>
     </ClCompile>
     <Link>
@@ -127,11 +127,49 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cg_base\cg_core\cg_area.c" />
+    <ClCompile Include="cg_base\cg_core\cg_color.c" />
+    <ClCompile Include="cg_base\cg_core\cg_style.c" />
+    <ClCompile Include="cg_base\cg_core\cg_vfb.c" />
+    <ClCompile Include="cg_base\cg_draw\cg_draw.c" />
+    <ClCompile Include="cg_base\cg_draw\cg_draw_2d.c" />
+    <ClCompile Include="cg_base\cg_draw\cg_draw_drv.c" />
+    <ClCompile Include="cg_base\cg_draw\cg_draw_line.c" />
+    <ClCompile Include="cg_base\cg_draw\cg_draw_point.c" />
+    <ClCompile Include="cg_base\cg_log\cg_error.c" />
+    <ClCompile Include="cg_base\cg_log\cg_log.c" />
+    <ClCompile Include="cg_base\cg_misc\cg_math.c" />
+    <ClCompile Include="cg_base\cg_tools\cg_memory.c" />
+    <ClCompile Include="cg_drivers\display\cg_hal_display.c" />
+    <ClCompile Include="cg_drivers\display\cg_hal_win_driver.c" />
+    <ClCompile Include="cg_init.c" />
+    <ClCompile Include="cg_drivers\monitor\pc_monitor.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SDL2.dll" />
     <None Include="SDL2\lib\x64\SDL2.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cg_base\cg_core\cg_area.h" />
+    <ClInclude Include="cg_base\cg_core\cg_color.h" />
+    <ClInclude Include="cg_base\cg_core\cg_style.h" />
+    <ClInclude Include="cg_base\cg_core\cg_vfb.h" />
+    <ClInclude Include="cg_base\cg_draw\cg_draw.h" />
+    <ClInclude Include="cg_base\cg_draw\cg_draw_2d.h" />
+    <ClInclude Include="cg_base\cg_draw\cg_draw_drv.h" />
+    <ClInclude Include="cg_base\cg_draw\cg_draw_line.h" />
+    <ClInclude Include="cg_base\cg_draw\cg_draw_point.h" />
+    <ClInclude Include="cg_base\cg_log\cg_error.h" />
+    <ClInclude Include="cg_base\cg_log\cg_log.h" />
+    <ClInclude Include="cg_base\cg_misc\cg_math.h" />
+    <ClInclude Include="cg_base\cg_tools\cg_memory.h" />
+    <ClInclude Include="cg_conf.h" />
+    <ClInclude Include="cg_drivers\display\cg_hal_display.h" />
+    <ClInclude Include="cg_drivers\display\cg_hal_win_driver.h" />
+    <ClInclude Include="cg_init.h" />
+    <ClInclude Include="cg_drivers\monitor\pc_monitor.h" />
+    <ClInclude Include="cg_drv_conf.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
