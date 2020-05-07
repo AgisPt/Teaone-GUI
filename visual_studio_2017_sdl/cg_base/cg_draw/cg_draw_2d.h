@@ -13,10 +13,13 @@ extern "C" {
 /************************************************************************/
 /* global functions                                                     */
 /************************************************************************/
-void cg_draw_ground_rect(cg_area_t* area, cg_area_t* mask, cg_style_t* style, cg_alpha_t alpha);
+void cg_draw_ground_rect(cg_rect_t*  area,
+                         cg_rect_t*  mask,
+                         cg_style_t* style,
+                         cg_alpha_t  alpha);
 
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
 
-#endif // _CG_DRAW_2D_H_
+#endif  // _CG_DRAW_2D_H_

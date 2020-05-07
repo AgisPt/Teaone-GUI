@@ -40,7 +40,7 @@ void pc_monitor_init(void)
         SDL_Delay(100);
 }
 
-void pc_monitor_refresh(cg_area_t* area, cg_color_t* frame_p)
+void pc_monitor_refresh(cg_rect_t* area, cg_color_t* frame_p)
 {
         if (cg_err_area_exist != cg_area_isexist(area))
         {
@@ -75,7 +75,7 @@ void pc_monitor_refresh(cg_area_t* area, cg_color_t* frame_p)
 #endif // CG_MULTI_BUFFER_ENABLE == 0
 }
 
-void pc_monitor_fill(cg_area_t* area, cg_color_t color)
+void pc_monitor_fill(cg_rect_t* area, cg_color_t color)
 {
         //int32_t x_max, x_min, y_max, y_min;
         //x_max = CG_MATH_MAX(x1, x2);

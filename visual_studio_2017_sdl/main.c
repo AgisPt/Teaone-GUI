@@ -25,13 +25,13 @@ int main(int argc, char** argv)
         .y = 100,
     };
 
-    cg_area_t area = {
+    cg_rect_t area = {
         .x = 10,
         .y = 10,
         .x_width = 100,
         .y_width = 100,
     };
-    cg_area_t mask = {
+    cg_rect_t mask = {
         .x = 0,
         .y = 0,
         .x_width = 200, 

@@ -4,8 +4,8 @@
 /************************************************************************/
 /* Include                                                              */
 /************************************************************************/
-#include <stdint.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 #include "../cg_log/cg_error.h"
 #ifdef __cplusplus
@@ -18,45 +18,45 @@ extern "C" {
 typedef int16_t cg_ruler_t;
 typedef int32_t cg_addr_t;
 
-typedef struct _cg_point
+typedef struct cg_point_s cg_point_t;
+typedef struct cg_rect_s  cg_rect_t;
+
+/************************************************************************/
+/* struct                                                               */
+/************************************************************************/
+struct cg_point_s
 {
-        cg_ruler_t x;
-        cg_ruler_t y;
-}cg_point_t;
+	cg_ruler_t x, y;
+};
 
-typedef struct _cg_area
+struct cg_rect_s
 {
-        cg_ruler_t    x;
-        cg_ruler_t    y;
-        cg_ruler_t    x_width;
-        cg_ruler_t    y_width;
-}cg_area_t;
-
-
+	cg_ruler_t x0, y0, x1, y1;
+};
 
 /************************************************************************/
 /* static inline functions                                              */
 /************************************************************************/
-static inline cg_ruler_t cg_area_get_width(cg_area_t* area)
+static inline cg_ruler_t cg_area_rect_get_width(cg_rect_t* rect)
 {
-        return area->x_width;
+	return rect->x1 - rect->x0;
 }
 
-static inline cg_error_t cg_area_isexist(cg_area_t* area)
+static inline cg_error_t cg_area_isexist(cg_rect_t* rect)
 {
-        if (area->x_width <= 1 || area->y_width <= 1)
-        {
-                return cg_err_area_not_exist;
-        }
-        return cg_err_area_exist;
+	if (CG_MATH_ABS(rect->x0 - rect->x1) <= 1 ||
+	    CG_MATH_ABS(rect->y0 - rect->y1) <= 1) {
+		return cg_err_area_not_exist;
+	}
+	return cg_err_area_exist;
 }
 /************************************************************************/
 /* global functions                                                     */
 /************************************************************************/
-bool  cg_area_intersect(cg_area_t* rest, cg_area_t* a1, cg_area_t* a2);
+bool cg_area_intersect(cg_rect_t* rest, cg_rect_t* rect1, cg_rect_t* rect2);
 
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
 
-#endif // _CG_AREA_H_
+#endif  // _CG_AREA_H_

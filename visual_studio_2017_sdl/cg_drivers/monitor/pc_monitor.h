@@ -16,8 +16,8 @@ extern "C" {
 /* global functions                                                     */
 /************************************************************************/
 void pc_monitor_init(void);
-void pc_monitor_refresh(cg_area_t* area, cg_color_t* frame_p);
-void pc_monitor_fill(cg_area_t* area, cg_color_t color)
+void pc_monitor_refresh(cg_rect_t* area, cg_color_t* frame_p);
+void pc_monitor_fill(cg_rect_t* area, cg_color_t color)
 ;
 #ifdef __cplusplus
 } /* extern "C" */

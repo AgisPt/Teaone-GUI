@@ -6,24 +6,30 @@ extern "C" {
 #endif
 
 /************************************************************************/
-/* Include                                                              */
+/* includes                                                             */
 /************************************************************************/
+#include "../../cg_drivers/display/cg_hal_display.h"
 #include "cg_area.h"
 #include "cg_color.h"
-#include "../../cg_drivers/display/cg_hal_display.h"
-/************************************************************************/
-/* Define                                                               */
-/************************************************************************/
-#define CG_VRAM_SIZE_BYTES  ((CG_HOR_PX) * (CG_VER_PX) * (CG_COLOR_DEPTH))
 
 /************************************************************************/
-/* Typedef                                                              */
+/* defines                                                              */
 /************************************************************************/
-typedef struct _cg_vfb
+#define CG_VRAM_SIZE_BYTES ((CG_HOR_PX) * (CG_VER_PX) * (CG_COLOR_DEPTH))
+
+/************************************************************************/
+/* typedefs                                                             */
+/************************************************************************/
+typedef struct cg_vfb_s cg_vfb_t;
+
+/************************************************************************/
+/* struct                                                               */
+/************************************************************************/
+struct cg_vfb_s
 {
-    cg_area_t area;
-    cg_color_t* frame_p;
-}cg_vfb_t;
+	cg_rect_t   area;
+	cg_color_t* frame_p;
+};
 
 /************************************************************************/
 /* global functions                                                     */
@@ -34,11 +40,8 @@ cg_vfb_t* cg_vfb_get_active(void);
 
 void cg_vfb_refresh(void);
 
-
-
-
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
 
-#endif // _CG_VFB_H_
+#endif  // _CG_VFB_H_
