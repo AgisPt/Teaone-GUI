@@ -35,9 +35,7 @@ struct cg_vfb_s
 /* global functions                                                     */
 /************************************************************************/
 cg_vfb_t* cg_vfb_get(void);
-
 cg_vfb_t* cg_vfb_get_active(void);
-
 void cg_vfb_refresh(void);
 
 #ifdef __cplusplus

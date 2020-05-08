@@ -14,4 +14,4 @@ void cg_init(void);
 } /* extern "C" */
 #endif
 
-#endif // _CG_INIT_H_
+#endif  // _CG_INIT_H_

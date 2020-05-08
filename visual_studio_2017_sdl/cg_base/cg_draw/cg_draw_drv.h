@@ -26,12 +26,12 @@ cg_error_t cg_draw_drv_vpx(cg_ruler_t x,
                            cg_ruler_t y,
                            cg_rect_t* mask,
                            cg_color_t color,
-                           cg_alpha_t alpha);
+                           cg_opa_t opa);
 
 cg_error_t cg_draw_drv_vfill(cg_rect_t* rect,
                              cg_rect_t* mask,
                              cg_color_t color,
-                             cg_alpha_t alpha);
+                             cg_opa_t opa);
 
 #ifdef __cplusplus
 } /* extern "C" */

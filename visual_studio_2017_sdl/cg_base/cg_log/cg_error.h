@@ -30,11 +30,13 @@ typedef enum {
 	cg_err_area_exist     = 0x20,
 	cg_err_area_not_exist = 0x21,
 	cg_err_area_intersect = 0x22,
+	cg_err_area_not_inlcd = 0x23,
 } cg_error_area;
 
 typedef enum {
 	cg_err_graphical_point_not_exist = 0x31,
-	cg_err_graphical_line_not_exist  = 0x31,
+	cg_err_graphical_line_not_exist  = 0x32,
+	cg_err_graphical_rect_not_exist  = 0x32,
 } cg_error_graphical;
 
 #ifdef __cplusplus

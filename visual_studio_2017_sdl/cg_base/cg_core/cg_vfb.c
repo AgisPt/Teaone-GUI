@@ -68,8 +68,7 @@ void cg_vfb_refresh(void)
 	}
 #if CG_MULTI_BUFFER_ENABLE == 0
 	/* 需要修改的部分进行刷新 */
-	cg_hal_disp_refresh(active->area.x1, active->area.y1, active->area.x0,
-	                    active->area.y0, active->frame_p);
+	cg_hal_disp_refresh(&active->area, active->frame_p);
 #else
 
 #endif  // CG_MULTI_BUFFER_ENABLE == 0

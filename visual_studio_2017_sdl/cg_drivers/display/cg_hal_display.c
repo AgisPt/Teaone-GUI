@@ -37,16 +37,12 @@ cg_disp_t* cg_hal_disp_create_handle(cg_disp_drv_t* driver)
 	return handle;
 }
 
-cg_error_t cg_hal_disp_refresh(cg_ruler_t  x0,
-                               cg_ruler_t  y0,
-                               cg_ruler_t  x1,
-                               cg_ruler_t  y1,
-                               cg_color_t* frame_p)
+cg_error_t cg_hal_disp_refresh(cg_rect_t* area, cg_color_t* frame_p)
 {
 	if (NULL == cg_handle)
 		return cg_err_handle_invalid;
 	if (NULL != cg_handle->dirver.disp_refresh) {
-		cg_handle->dirver.disp_refresh(x1, y1, x0, y0, frame_p);
+		cg_handle->dirver.disp_refresh(area, frame_p);
 	}
 	else {
 		CG_LOG_ERROR("display refresh function unregistered!");
@@ -54,16 +50,12 @@ cg_error_t cg_hal_disp_refresh(cg_ruler_t  x0,
 	}
 }
 
-cg_error_t cg_hal_disp_fill(cg_ruler_t x1,
-                            cg_ruler_t y1,
-                            cg_ruler_t x2,
-                            cg_ruler_t y2,
-                            cg_color_t color)
+cg_error_t cg_hal_disp_fill(cg_rect_t* area, cg_color_t color)
 {
 	if (NULL == cg_handle)
 		return cg_err_handle_invalid;
 	if (NULL != cg_handle->dirver.disp_fill) {
-		cg_handle->dirver.disp_fill(x1, y1, x2, y2, color);
+		cg_handle->dirver.disp_fill(area, color);
 	}
 	else {
 		CG_LOG_ERROR("display fill function unregistered!");

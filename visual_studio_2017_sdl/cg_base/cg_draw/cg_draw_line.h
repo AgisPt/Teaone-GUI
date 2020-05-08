@@ -12,11 +12,11 @@ extern "C" {
 /************************************************************************/
 /* global functions                                                     */
 /************************************************************************/
-cg_error_t cg_draw_ground_line(cg_point_t* point1,
+cg_error_t cg_draw__line(cg_point_t* point1,
                          cg_point_t* point2,
-                         cg_rect_t* mask,
+                         cg_rect_t*  mask,
                          cg_style_t* style,
-                         cg_alpha_t alpha);
+                         cg_opa_t    opa);
 
 #ifdef __cplusplus
 } /* extern "C" */

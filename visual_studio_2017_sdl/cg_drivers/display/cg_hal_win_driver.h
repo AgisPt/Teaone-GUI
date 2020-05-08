@@ -10,9 +10,6 @@ extern "C" {
 /************************************************************************/
 #include "cg_hal_display.h"
 
-
-
-
 /************************************************************************/
 /* global functions                                                     */
 /************************************************************************/
@@ -22,4 +19,4 @@ void cg_hal_drv_binding(cg_disp_drv_t* cg_disp_drv);
 } /* extern "C" */
 #endif
 
-#endif // _CG_HAL_WIN_DRIVER_H_
+#endif  // _CG_HAL_WIN_DRIVER_H_

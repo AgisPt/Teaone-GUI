@@ -7,7 +7,7 @@ extern "C" {
 /************************************************************************/
 /* includes                                                             */
 /************************************************************************/
-#include "../cg_core/cg_area.h"
+#include <stdint.h>
 
 /************************************************************************/
 /* defines                                                              */
@@ -23,16 +23,7 @@ extern "C" {
 /* global functions                                                     */
 /************************************************************************/
 
-//************************************
-// Multiplication overflow detection
-// Method:    cg_math_multi_over_dec
-// FullName:  cg_math_multi_over_dec
-// Access:    public
-// Returns:   cg_ruler_t
-// Parameter: cg_ruler_t value1
-// Parameter: cg_ruler_t value2
-//************************************
-cg_addr_t cg_math_multi_over_dec(cg_ruler_t value1, cg_ruler_t value2);
+int32_t cg_math_multi_over_dec(int16_t value1, int16_t value2);
 
 #ifdef __cplusplus
 } /* extern "C" */

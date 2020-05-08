@@ -1,16 +1,17 @@
 #ifndef _CG_AREA_H_
 #define _CG_AREA_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 /************************************************************************/
-/* Include                                                              */
+/* includes                                                             */
 /************************************************************************/
 #include <stdbool.h>
 #include <stdint.h>
 
 #include "../cg_log/cg_error.h"
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include "../cg_misc/cg_math.h"
 
 /************************************************************************/
 /* typedef                                                              */
@@ -42,18 +43,27 @@ static inline cg_ruler_t cg_area_rect_get_width(cg_rect_t* rect)
 	return rect->x1 - rect->x0;
 }
 
-static inline cg_error_t cg_area_isexist(cg_rect_t* rect)
+static inline cg_rect_t cg_area_rect_arrange_coordinate(cg_rect_t* rect)
+{
+	cg_rect_t area;
+	area.x0 = CG_MATH_MIN(rect->x0, rect->x1);
+	area.y0 = CG_MATH_MIN(rect->y0, rect->y1);
+	area.x1 = CG_MATH_MAX(rect->x0, rect->x1);
+	area.y1 = CG_MATH_MAX(rect->x0, rect->x1);
+	return area;
+}
+static inline bool cg_area_isexist(cg_rect_t* rect)
 {
 	if (CG_MATH_ABS(rect->x0 - rect->x1) <= 1 ||
 	    CG_MATH_ABS(rect->y0 - rect->y1) <= 1) {
-		return cg_err_area_not_exist;
+		return false;
 	}
-	return cg_err_area_exist;
+	return true;
 }
 /************************************************************************/
 /* global functions                                                     */
 /************************************************************************/
-bool cg_area_intersect(cg_rect_t* rest, cg_rect_t* rect1, cg_rect_t* rect2);
+bool cg_area_isintersect(cg_rect_t* rest, cg_rect_t* rect1, cg_rect_t* rect2);
 
 #ifdef __cplusplus
 } /* extern "C" */

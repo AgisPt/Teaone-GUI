@@ -1,7 +1,6 @@
 #include "cg_area.h"
-#include "../cg_misc/cg_math.h"
 
-bool cg_area_intersect(cg_rect_t* rest, cg_rect_t* rect1, cg_rect_t* rect2)
+bool cg_area_isintersect(cg_rect_t* rest, cg_rect_t* rect1, cg_rect_t* rect2)
 {
 	rest->x0 = CG_MATH_MAX(rect1->x0, rect2->x0);
 	rest->y0 = CG_MATH_MAX(rect1->y0, rect2->y0);

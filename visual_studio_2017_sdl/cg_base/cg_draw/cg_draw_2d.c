@@ -2,39 +2,25 @@
 #include "../cg_base/cg_misc/cg_math.h"
 #include "../cg_core/cg_vfb.h"
 #include "cg_draw_line.h"
+#include "cg_draw.h"
+#include "../cg_base/cg_core/cg_vfb.h"
 
-void cg_draw_ground_rect(cg_rect_t*  area,
-                         cg_rect_t*  mask,
+cg_error_t cg_draw__fill_rect(cg_rect_t* rect,
+                         cg_rect_t* mask,
                          cg_style_t* style,
-                         cg_alpha_t  alpha)
+                         cg_opa_t opa)
 {
-	/*Exclude line*/
-	if (CG_MATH_ABS(area->x1 - area->x2) <= 1 ||
-	    CG_MATH_ABS(area->y - area->y_width) <= 1)
-		return;
-
-	cg_point_t p1, p2, p3, p4;
-
-	if (style->graph.fill) {
-		cg_hal_disp_fill(area->x1, area->y, area->x2, area->y_width,
-		                 style->graph.color);
+	cg_error_t err = cg_err_success;
+	if (true != cg_area_isexist(rect)) {
+		err = cg_err_graphical_rect_not_exist;
+		return err;
 	}
-	else {
-		p1.x = CG_MATH_MIN(area->x1, area->x2);
-		p1.y = CG_MATH_MIN(area->y, area->y_width);
+	/*Make sure that the input rectangular coordinate conform to the
+	GUI specifications,and calculate the coordinate of the input point.
+	This should be the object's own business.Yeah, I haven't object*/
+	cg_rect_t area = cg_area_rect_arrange_coordinate(rect);
 
-		p2.x = CG_MATH_MAX(area->x1, area->x2);
-		p2.y = CG_MATH_MIN(area->y, area->y_width);
-
-		p3.x = CG_MATH_MIN(area->x1, area->x2);
-		p3.y = CG_MATH_MAX(area->y, area->y_width);
-
-		p4.x = CG_MATH_MAX(area->x1, area->x2);
-		p4.y = CG_MATH_MAX(area->y, area->y_width);
-
-		cg_draw_ground_line(&p1, &p2, mask, style, alpha);
-		cg_draw_ground_line(&p1, &p3, mask, style, alpha);
-		cg_draw_ground_line(&p4, &p2, mask, style, alpha);
-		cg_draw_ground_line(&p4, &p3, mask, style, alpha);
-	}
+	fill_pixel(&area, mask, style->graph.color, opa);
+	cg_vfb_refresh();
+	return err;
 }

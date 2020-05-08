@@ -13,10 +13,10 @@ extern "C" {
 /************************************************************************/
 /* global functions                                                     */
 /************************************************************************/
-void cg_draw_ground_rect(cg_rect_t*  area,
-                         cg_rect_t*  mask,
+cg_error_t cg_draw__fill_rect(cg_rect_t* rect,
+                         cg_rect_t* mask,
                          cg_style_t* style,
-                         cg_alpha_t  alpha);
+                         cg_opa_t opa);
 
 #ifdef __cplusplus
 } /* extern "C" */

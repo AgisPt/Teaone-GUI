@@ -41,11 +41,7 @@ typedef union
 	uint32_t full;
 } cg_color32_t;
 
-typedef uint8_t cg_alpha_t;
-
-/************************************************************************/
-/* Define                                                               */
-/************************************************************************/
+typedef uint8_t cg_opa_t;
 
 /************************************************************************/
 /* Color depth                                                          */
@@ -61,24 +57,24 @@ typedef cg_color32_t cg_color_t;
 #endif  // CG_COLOR_DEPTH == 1
 
 /************************************************************************/
-/* Alpha                                                                */
+/* alpha                                                                */
 /************************************************************************/
-#define CG_ALPHA_MIN 10
-#define CG_ALPHA_MAX 254
+#define CG_OPA_MIN 10
+#define CG_OPA_MAX 254
 
-enum { CG_ALPHA_COVER  = 0,
-       CG_ALPHA_0      = 0,
-       CG_ALPHA_10     = 25,
-       CG_ALPHA_20     = 51,
-       CG_ALPHA_30     = 76,
-       CG_ALPHA_40     = 102,
-       CG_ALPHA_50     = 127,
-       CG_ALPHA_60     = 153,
-       CG_ALPHA_70     = 178,
-       CG_ALPHA_80     = 204,
-       CG_ALPHA_90     = 229,
-       CG_ALPHA_100    = 255,
-       CG_ALPHA_TRANSP = 255,
+enum { CG_OPA_COVER  = 0,
+       CG_OPA_0      = 0,
+       CG_OPA_10     = 25,
+       CG_OPA_20     = 51,
+       CG_OPA_30     = 76,
+       CG_OPA_40     = 102,
+       CG_OPA_50     = 127,
+       CG_OPA_60     = 153,
+       CG_OPA_70     = 178,
+       CG_OPA_80     = 204,
+       CG_OPA_90     = 229,
+       CG_OPA_100    = 255,
+       CG_OPA_TRANSP = 255,
 };
 
 /************************************************************************/
@@ -108,16 +104,19 @@ static inline uint32_t cg_color_to32(cg_color_t color)
 }
 
 static inline cg_color_t
-cg_color_mix(cg_color_t foreground, cg_color_t background, cg_alpha_t mix)
+cg_color_mix(cg_color_t foreground, cg_color_t background, cg_opa_t mix)
 {
 	cg_color_t ret;
 #if CG_COLOR_DEPTH != 1
 	ret.red = ((uint16_t)foreground.red * (255 - mix) +
-	           (background.red * mix)) >> 8;
+	           (background.red * mix)) >>
+	          8;
 	ret.green = ((uint16_t)foreground.green * (255 - mix) +
-	             (background.green * mix)) >> 8;
+	             (background.green * mix)) >>
+	            8;
 	ret.blue = ((uint16_t)foreground.blue * (255 - mix) +
-	            (background.blue * mix)) >> 8;
+	            (background.blue * mix)) >>
+	           8;
 #	if CG_COLOR_DEPTH == 32
 	ret.alpha = mix
 #	endif
