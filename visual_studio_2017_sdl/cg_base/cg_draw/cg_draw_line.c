@@ -38,7 +38,7 @@ cg_error_t cg_draw__line(cg_point_t* point1,
                          cg_style_t* style,
                          cg_opa_t    opa)
 {
-	if (0 == style->line.wdith)
+	if (0 == style->wdith)
 		return cg_err_graphical_line_not_exist;
 	if (point1->x == point2->x && point1->y == point2->y)
 		return cg_err_graphical_line_not_exist;
@@ -82,7 +82,7 @@ static void draw_line_bresenham(cg_point_t* ps,
 	abs_y = CG_MATH_ABS(dy);
 	if (abs_x > abs_y) {
 		for (; x != pe->x; x += ux) {
-			set_pixel(x, y, mask, style->line.color, opa);
+			set_pixel(x, y, mask, style->color, opa);
 			eps += abs_y;
 			if ((eps << 1) >= dx) {
 				eps -= abs_x;
@@ -92,7 +92,7 @@ static void draw_line_bresenham(cg_point_t* ps,
 	}
 	else {
 		for (; y != pe->y; y += uy) {
-			set_pixel(x, y, mask, style->line.color, opa);
+			set_pixel(x, y, mask, style->color, opa);
 			eps += abs_x;
 			if ((eps << 1) >= dy) {
 				eps -= abs_y;

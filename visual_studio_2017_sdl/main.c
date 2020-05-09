@@ -29,7 +29,7 @@ int main(int argc, char** argv)
 	        .x0 = 200,
 	        .y0 = 200,
 	        .x1 = 0,
-	        .y1 = 0,
+	        .y1 = 500,
 	};
 	cg_rect_t mask = {
 	        .x0 = 0,
@@ -37,7 +37,7 @@ int main(int argc, char** argv)
 	        .x1 = 800,
 	        .y1 = 480,
 	};
-	cg_style_t style = {.point.radius = 100, .line.wdith = 3};
+	cg_style_t style = {.radius = 100, .wdith = 10};
 
 	cg_init();
 	cg_vfb_t* cg_active = cg_vfb_get();
@@ -46,12 +46,12 @@ int main(int argc, char** argv)
 	cg_active->area.x1  = 800;
 	cg_active->area.y1  = 480;
 
-	style.point.color.green = 0xffff;
-	style.line.color.red    = 0xFF;
-	style.graph.color.full  = 0xFFFF;
+	style.color.green = 0xffff;
+	style.color.red    = 0xFF;
 	cg_draw__line(&point2, &point1, &mask, &style, 0);
 	cg_draw__point(&point1, &mask, &style, 0);
-	cg_draw__fill_rect(&area, &mask, &style, 0);
+	cg_draw__rect(&area, &mask, &style, 0);
+
 	while (1) {
 		;
 	}

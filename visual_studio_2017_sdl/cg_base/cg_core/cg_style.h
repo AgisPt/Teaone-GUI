@@ -15,7 +15,7 @@ extern "C" {
 /************************************************************************/
 /* typedefs                                                             */
 /************************************************************************/
-typedef bool cg_bool_t;
+typedef bool              cg_bool_t;
 typedef struct cg_style_s cg_style_t;
 
 /************************************************************************/
@@ -23,23 +23,9 @@ typedef struct cg_style_s cg_style_t;
 /************************************************************************/
 struct cg_style_s
 {
-	struct
-	{
-		cg_color_t color;
-		cg_ruler_t radius;
-	} point;
-
-	struct
-	{
-		cg_color_t color;
-		cg_ruler_t wdith;
-	} line;
-
-	struct
-	{
-		cg_color_t color;
-		cg_bool_t  fill;
-	} graph;
+	cg_color_t color;
+	cg_ruler_t radius;
+	cg_ruler_t wdith;
 };
 
 #ifdef __cplusplus

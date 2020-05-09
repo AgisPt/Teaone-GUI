@@ -19,11 +19,11 @@ cg_error_t cg_draw__point(cg_point_t* point,
                           cg_style_t* style,
                           cg_opa_t    opa)
 {
-	cg_ruler_t radius = style->point.radius;
+	cg_ruler_t radius = style->radius;
 	if (0 == radius)
 		return cg_err_graphical_point_not_exist;
 
-	draw_point(point, mask, radius, style->point.color, opa);
+	draw_point(point, mask, radius, style->color, opa);
 	return cg_err_success;
 }
 

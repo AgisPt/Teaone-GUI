@@ -49,7 +49,7 @@ static inline cg_rect_t cg_area_rect_arrange_coordinate(cg_rect_t* rect)
 	area.x0 = CG_MATH_MIN(rect->x0, rect->x1);
 	area.y0 = CG_MATH_MIN(rect->y0, rect->y1);
 	area.x1 = CG_MATH_MAX(rect->x0, rect->x1);
-	area.y1 = CG_MATH_MAX(rect->x0, rect->x1);
+	area.y1 = CG_MATH_MAX(rect->y0, rect->y1);
 	return area;
 }
 static inline bool cg_area_isexist(cg_rect_t* rect)

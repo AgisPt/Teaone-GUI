@@ -13,11 +13,15 @@ extern "C" {
 /************************************************************************/
 /* global functions                                                     */
 /************************************************************************/
-cg_error_t cg_draw__fill_rect(cg_rect_t* rect,
-                         cg_rect_t* mask,
-                         cg_style_t* style,
-                         cg_opa_t opa);
+cg_error_t cg_draw__fill_rect(cg_rect_t*  rect,
+                              cg_rect_t*  mask,
+                              cg_style_t* style,
+                              cg_opa_t    opa);
 
+cg_error_t cg_draw__rect(cg_rect_t*  rect,
+                         cg_rect_t*  mask,
+                         cg_style_t* style,
+                         cg_opa_t    opa);
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
