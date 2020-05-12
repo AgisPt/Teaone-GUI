@@ -69,6 +69,33 @@
     <ClCompile Include="cg_base\cg_log\cg_error.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Simple\Window\Thermometer\thermometer_view.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Simple\Window\Thermometer\thermometer_presenter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Simple\Window\Thermometer\thermometer_model.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Simple\2D\rect\point_line_rect.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Simple\Window\Thermometer\thermometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cg_base\cg_obj\cg_model.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cg_base\cg_obj\cg_presenter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cg_base\cg_obj\cg_window.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cg_base\cg_obj\cg_view.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="SDL2\lib\x64\SDL2.dll" />
@@ -130,6 +157,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="cg_base\cg_log\cg_error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cg_base\cg_obj\cg_model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cg_base\cg_obj\cg_presenter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cg_base\cg_obj\cg_window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cg_base\cg_obj\cg_view.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

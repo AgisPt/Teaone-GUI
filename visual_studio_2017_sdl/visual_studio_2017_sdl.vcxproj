@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{6F59884D-4367-49A9-B6FD-BF60376873CE}</ProjectGuid>
     <RootNamespace>visualstudio2017sdl</RootNamespace>
-    <ProjectName>cta gui</ProjectName>
+    <ProjectName>T1 GUI</ProjectName>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,12 +139,23 @@
     <ClCompile Include="cg_base\cg_log\cg_error.c" />
     <ClCompile Include="cg_base\cg_log\cg_log.c" />
     <ClCompile Include="cg_base\cg_misc\cg_math.c" />
+    <ClCompile Include="cg_base\cg_obj\cg_model.c" />
+    <ClCompile Include="cg_base\cg_obj\cg_presenter.c" />
+    <ClCompile Include="cg_base\cg_obj\cg_view.c" />
+    <ClCompile Include="cg_base\cg_obj\cg_window.c" />
     <ClCompile Include="cg_base\cg_tools\cg_memory.c" />
     <ClCompile Include="cg_drivers\display\cg_hal_display.c" />
     <ClCompile Include="cg_drivers\display\cg_hal_win_driver.c" />
     <ClCompile Include="cg_init.c" />
     <ClCompile Include="cg_drivers\monitor\pc_monitor.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="Simple\2D\rect\point_line_rect.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Simple\Window\Thermometer\thermometer.c" />
+    <ClCompile Include="Simple\Window\Thermometer\thermometer_model.c" />
+    <ClCompile Include="Simple\Window\Thermometer\thermometer_presenter.c" />
+    <ClCompile Include="Simple\Window\Thermometer\thermometer_view.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SDL2.dll" />
@@ -163,6 +174,10 @@
     <ClInclude Include="cg_base\cg_log\cg_error.h" />
     <ClInclude Include="cg_base\cg_log\cg_log.h" />
     <ClInclude Include="cg_base\cg_misc\cg_math.h" />
+    <ClInclude Include="cg_base\cg_obj\cg_model.h" />
+    <ClInclude Include="cg_base\cg_obj\cg_presenter.h" />
+    <ClInclude Include="cg_base\cg_obj\cg_view.h" />
+    <ClInclude Include="cg_base\cg_obj\cg_window.h" />
     <ClInclude Include="cg_base\cg_tools\cg_memory.h" />
     <ClInclude Include="cg_conf.h" />
     <ClInclude Include="cg_drivers\display\cg_hal_display.h" />
@@ -170,6 +185,7 @@
     <ClInclude Include="cg_init.h" />
     <ClInclude Include="cg_drivers\monitor\pc_monitor.h" />
     <ClInclude Include="cg_drv_conf.h" />
+    <ClInclude Include="cg.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
