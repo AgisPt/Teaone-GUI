@@ -66,9 +66,6 @@
     <ClCompile Include="cg_base\cg_draw\cg_draw_drv.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cg_base\cg_log\cg_error.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Simple\Window\Thermometer\thermometer_view.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -94,6 +91,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cg_base\cg_obj\cg_view.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cg_base\cg_log\cg_error_t.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -156,9 +156,6 @@
     <ClInclude Include="cg_base\cg_draw\cg_draw_drv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cg_base\cg_log\cg_error.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="cg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -172,6 +169,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="cg_base\cg_obj\cg_view.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cg_base\cg_message\cg_message.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cg_base\cg_log\cg_error_t.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

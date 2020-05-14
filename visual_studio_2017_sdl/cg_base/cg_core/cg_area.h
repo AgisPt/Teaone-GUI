@@ -10,7 +10,6 @@ extern "C" {
 #include <stdbool.h>
 #include <stdint.h>
 
-#include "../cg_log/cg_error.h"
 #include "../cg_misc/cg_math.h"
 
 /************************************************************************/

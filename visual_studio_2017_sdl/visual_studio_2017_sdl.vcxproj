@@ -136,7 +136,7 @@
     <ClCompile Include="cg_base\cg_draw\cg_draw_drv.c" />
     <ClCompile Include="cg_base\cg_draw\cg_draw_line.c" />
     <ClCompile Include="cg_base\cg_draw\cg_draw_point.c" />
-    <ClCompile Include="cg_base\cg_log\cg_error.c" />
+    <ClCompile Include="cg_base\cg_log\cg_error_t.c" />
     <ClCompile Include="cg_base\cg_log\cg_log.c" />
     <ClCompile Include="cg_base\cg_misc\cg_math.c" />
     <ClCompile Include="cg_base\cg_obj\cg_model.c" />
@@ -171,8 +171,9 @@
     <ClInclude Include="cg_base\cg_draw\cg_draw_drv.h" />
     <ClInclude Include="cg_base\cg_draw\cg_draw_line.h" />
     <ClInclude Include="cg_base\cg_draw\cg_draw_point.h" />
-    <ClInclude Include="cg_base\cg_log\cg_error.h" />
+    <ClInclude Include="cg_base\cg_log\cg_error_t.h" />
     <ClInclude Include="cg_base\cg_log\cg_log.h" />
+    <ClInclude Include="cg_base\cg_message\cg_message.h" />
     <ClInclude Include="cg_base\cg_misc\cg_math.h" />
     <ClInclude Include="cg_base\cg_obj\cg_model.h" />
     <ClInclude Include="cg_base\cg_obj\cg_presenter.h" />

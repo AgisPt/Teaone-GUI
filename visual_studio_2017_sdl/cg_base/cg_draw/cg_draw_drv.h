@@ -8,8 +8,8 @@ extern "C" {
 /************************************************************************/
 /* includes                                                             */
 /************************************************************************/
-#include "../../cg_base/cg_core/cg_style.h"
-#include "../../cg_drivers/display/cg_hal_display.h"
+#include "../cg_core/cg_style.h"
+#include "../cg_log/cg_error_t.h"
 
 //************************************
 // Method:    cg_draw_vpx

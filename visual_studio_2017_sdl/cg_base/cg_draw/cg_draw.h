@@ -6,7 +6,7 @@ extern "C" {
 #endif
 
 #include "../cg_core/cg_style.h"
-#include "cg_draw_drv.h"
+#include "../cg_log/cg_error_t.h"
 
 extern cg_error_t (*const set_pixel)(cg_ruler_t x,
                                      cg_ruler_t y,

@@ -1,4 +1,5 @@
 #include "cg_draw.h"
+#include "cg_draw_drv.h"
 
 cg_error_t (*const set_pixel)(cg_ruler_t x,
                               cg_ruler_t y,

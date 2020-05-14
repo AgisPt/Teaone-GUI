@@ -1,9 +1,13 @@
-#ifndef _CG_PRESENTER_H_
-#define _CG_PRESENTER_H_
+#ifndef _CG_MESSAGE_H_
+#define _CG_MESSAGE_H_
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+/************************************************************************/
+/* includes                                                             */
+/************************************************************************/
+
 /************************************************************************/
 /* extern                                                               */
 /************************************************************************/
@@ -12,23 +16,18 @@ extern struct cg_win_handle_s;
 /************************************************************************/
 /* typedefs                                                             */
 /************************************************************************/
-typedef struct cg_presenter_handle_s cg_presenter_handle_t;
+typedef struct cg_message_s cg_message_t;
 
 /************************************************************************/
 /* struct                                                               */
 /************************************************************************/
-struct cg_presenter_handle_s
+struct cg_message_s
 {
-	struct cg_win_handle_s* window;
+	struct cg_win_handle_s* win;
 };
-
-/************************************************************************/
-/* global functions                                                     */
-/************************************************************************/
-cg_presenter_handle_t cg_presenser_create(void);
 
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
 
-#endif  // _CG_PRESENTER_H_
+#endif  // _CG_MESSAGE_H_
